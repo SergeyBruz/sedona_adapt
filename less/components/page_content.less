@@ -9,11 +9,12 @@
     flex-shrink: 1;
     &--blue_bg{
       flex-grow: 0;
-      max-height: 256px;
+      height: 256px;
       box-sizing: border-box;
       padding: 40px 55px;
       background-color: @blue;
       color: white;
+      overflow: hidden;
     }
     &--img_city{
       width:800px;
@@ -30,15 +31,17 @@
     }
   }
   &__columns_bottom{
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
+    flex-basis: 33.3%;
     box-sizing: border-box;
     padding: 60px 70px;
+    height: 330px;
+    overflow: hidden;
     &--grey_bg{
-      background-color: @grey;
       padding-top: 45px;
       padding-bottom: 65px;
+      height: 256px;
+      overflow: hidden;
+      background-color: @grey;
     }
   }
   .icon{
@@ -61,14 +64,21 @@
         width:512px;
       }
       &--blue_bg{
-        padding:28px 40px;
+        padding:40px 20px;
+        background: @blue_mobil;
+
       }
     }
     &__columns_bottom{
-      padding:28px 30px;
+      padding:60px 20px;
+      &--grey_bg{
+        padding: 25px 48px; 
+      }
     }
   }
 }
+
+
 @media(max-width: 480px){
   .page_content{
     flex-direction: column;
@@ -82,10 +92,64 @@
       }
       &--blue_bg{
         width: 100%;
+        height: 191px;
       }
     }
     &__columns_bottom{
       width:100%;
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      padding-top: 10px;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-bottom: 20px;
+      &:first-child{
+        padding-top: 20px;
+      }
+      &:last-child{
+        padding-bottom: 35px;
+      }
+      .icon{
+        position: relative;
+        top:-25px;
+        width: 37px;
+        margin-right: 10px;
+      }
+      .mobile_content{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        h2{
+          padding: 0;
+          margin: 0;
+          margin-bottom: 15px;
+        }
+        p{
+          padding: 0;
+          margin: 0;
+        }
+      }
+      &--grey_bg{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        padding: 25px 20px;
+        text-align: center;
+        border-bottom: 1px solid @grey_dark;
+        &:first-child{
+          padding-top: 25px;
+        }
+        &:last-child{
+          padding-bottom: 25px;
+          border-bottom: none;
+        }
+        h2{
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
