@@ -1,0 +1,166 @@
+.btn{
+  display: inline-block;
+  font-family: @font_family;
+  font-size: @font_size--h2;
+  font-weight: 700;
+  color: white;
+  border: none;
+  outline: none;
+  &--title{
+    width: 47.4%;
+    padding-top:30px;
+    padding-bottom: 30px;
+    background-color: @brown;
+    &:hover{
+      background-color: @brown_dark;
+    }
+    &:active{
+      background-color: #503e33;
+      color:#766860;
+    }
+  }
+
+  &--search{
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: @blue_light;
+    margin: 0 auto;
+    &:hover{
+      background-color: @blue;
+    }
+    &:active{
+      background-color: @blue_dark;
+      color:@blue_mobil;
+    }
+  }
+}
+.search_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 9.6%;
+  input:hover{
+    background-color: @grey;
+  }
+  input:focus{
+    background-color: white;
+    outline: 2px solid @grey;
+  }
+  &__date{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    .calendar_icon{
+      position: absolute;
+      padding: 8px 8px;
+      top:1px;
+      right:0;
+      cursor: pointer;
+      fill:@grey_dark;
+      &:hover{
+        fill:black;
+      }
+      &:active{
+        fill:@blue;
+      }
+    }
+    input{
+      flex-grow: 1;
+      width: 75%;
+      padding-left: 2.5%;
+      padding-right: 32px;
+      font-weight: 700;
+
+    }
+    label{
+      text-align: left;
+      flex-grow: 1;
+    }
+  }
+  &__age{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__age_item:last-child{
+    margin-right: 0;
+
+  }
+  &__age_item{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+    margin-right: 40px;
+    input{
+      width: 52%;
+      font-weight: 700;
+      text-align: center;
+    }
+    label{
+      text-align: left;
+      flex-grow: 1;
+    }
+  }
+  .number_icon{
+    position: absolute;
+    cursor: pointer;
+    fill:@grey_dark;
+    padding:16px 16px;
+    &:hover{
+      fill:black;
+    }
+    &:active{
+      fill:@blue;
+    }
+  }
+  .min{
+    top:2px;
+    right:70px;
+  }
+  .max{
+    top:2px;
+    right:2px
+  }
+}
+
+
+@media(max-width: 480px){
+  .btn{
+    &--title{
+      width:100%;
+    }
+  }
+  .search_form{
+    flex-direction: column;
+    padding: 6.25%;
+    &__date{
+      flex-direction: column;
+      input{
+        width: 100%;
+      }
+      label{
+        align-self: flex-start;
+        padding-left: 13px;
+      }
+    }
+    .age_item{
+      flex-direction: column;
+      input{
+        width: 100%;
+      }
+      label{
+        align-self: flex-start;
+        padding-left: 13px;
+      }
+    }
+  }
+}

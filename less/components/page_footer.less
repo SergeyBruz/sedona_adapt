@@ -1,0 +1,124 @@
+.main_footer{
+  position: relative;
+  &__search_title{
+    padding-top: 50px;
+    h1{
+      margin:0;
+      margin-bottom: 15px;
+    }
+    p{
+      margin-bottom:45px;
+    }
+  }
+  &__search_form{
+    display: none;
+    position: absolute;
+    width:47.5%;
+    left:50%;
+    margin-left: -23.75%;
+    background-color: white;
+    box-shadow: @shadow;
+    &--show{
+      display: block;
+    }
+  }
+  &__footer_bottom{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    background:@white_transp;
+    padding:20px 0;
+    .footer_item{
+      flex: 1;
+      &__visit:hover {
+        color: @blue;
+      }
+      &__visit:active {
+        color: @grey_dark;
+      }
+      &__social{
+        .social{
+          display: inline-block;
+          vertical-align: middle;
+          box-sizing: border-box;
+          padding-top: 14px;
+          margin-right: 7px;
+          width: 46px;
+          height: 48px;
+          background-color: @blue_light;
+          font-size: 0;
+          &:hover{
+            background-color: @blue;
+          }
+          &:active{
+            background-color: @blue_dark;
+          }
+          &:active .social__icon{
+            fill:@blue_mobil;
+          }
+          &__icon{
+            fill:white;
+          }
+        }
+      }
+      &__academy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+          margin-right: 10px;
+        }
+        .academy_web{
+          &--logo{
+            fill:black;
+          }
+          &--logo:hover{
+            fill:@blue_light;
+          }
+          &--logo:active{
+            fill:@grey_dark;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:800px){
+  .main_footer{
+    .btn{
+      &--title{
+        width:74%;
+
+      }
+    }
+    &__search_form{
+      width:74%;
+      margin-left: -37%;
+    }
+  }
+}
+
+@media(max-width: 480px){
+  .main_footer{
+    .btn{
+      &--title{
+        width:100%;
+      }
+    }
+    &__search_form{
+      width: 100%;
+      left:0;
+      margin-left: 0;
+      box-shadow: none;
+    }
+    &__footer_bottom{
+      flex-direction: column;
+      a{
+        color: black;
+      }
+    }
+  }
+}
