@@ -1,0 +1,101 @@
+.nav_menu{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .item{
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: @font_family;
+    font-size: @font_size;
+    font-weight: 700;
+    color:black;
+    cursor: pointer;
+    &:hover a{
+      color:@blue;
+    }
+    &:active a{
+      color:@grey_dark;
+    }
+    &--active a{
+      color:@brown;
+    }
+    &--active:hover a{
+      color:@brown_dark;
+    }
+    &--active:active a{
+      color: @brown_light;
+    }
+  }
+  &__logo{
+    position: relative;
+  }
+  .logo_container{
+      position: absolute;
+      min-width:140px;
+      min-height: 71px;
+      top: -10px;
+      background: url("../img/form-logo-triangle.svg") no-repeat;
+      background-position: center;
+      z-index: 2;
+      &--img{
+        display: inline-block;
+        vertical-align: top;
+        min-width:67px;
+        height: 55px;
+      }
+  }
+}
+@media (max-width:800px){
+  .page_header{
+
+  }
+  .logo_container{
+    left:-30px;
+  }
+}
+@media(max-width: 480px){
+  .page_header{
+
+  }
+  .nav_menu{
+    flex-direction: column;
+    .item{
+      width: 100%;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      background-color: @blue_mobil;
+      border-top: 1px solid #9ac2db;
+      border-bottom: 1px solid #678fa8;
+      &--active a{
+        color:white;
+      }
+      &--info{
+        order: 2;
+      }
+      &--foto{
+        order: 3;
+      }
+      &--logo{
+        flex-grow: 0;
+        flex-shrink: 0;
+        order:5;
+        background-color: white;
+        border: none;
+        z-index: 1;
+      }
+      &--map{
+        order: 1;
+      }
+      &--hotels{
+        order: 4;
+        border-bottom: none;
+      }
+    }
+  }
+}
