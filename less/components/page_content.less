@@ -1,45 +1,36 @@
 .page_content{
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: nowrap;
-
+  min-height: 256px;
   &__columns_top{
     flex-shrink: 1;
     &--blue_bg{
       flex-grow: 0;
-      height: 256px;
       box-sizing: border-box;
       padding: 40px 55px;
       background-color: @blue;
       color: white;
-      overflow: hidden;
     }
     &--img_city{
-      width:800px;
-      height: 256px;
+      width: 800px;
     }
     &--img_bridge{
       width: 800px;
-      height: 256px;
     }
     img{
-      margin:0;
-      width:800px;
-      height: 256px;
+      min-height: 100%;
     }
   }
   &__columns_bottom{
     flex-basis: 33.3%;
     box-sizing: border-box;
     padding: 60px 70px;
-    height: 330px;
-    overflow: hidden;
     &--grey_bg{
       padding-top: 45px;
       padding-bottom: 65px;
-      height: 256px;
       overflow: hidden;
       background-color: @grey;
     }
@@ -53,6 +44,7 @@
 
 @media (max-width:800px) {
   .page_content{
+
     &__columns_top{
       img{
         width:512px;
@@ -72,7 +64,7 @@
     &__columns_bottom{
       padding:60px 20px;
       &--grey_bg{
-        padding: 25px 48px; 
+        padding: 25px 48px;
       }
     }
   }
