@@ -40,6 +40,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 9.6%;
+  z-index: 1;
   input:hover{
     background-color: @grey;
   }
@@ -168,5 +169,15 @@
         padding-left: 13px;
       }
     }
+  }
+}
+.datepicker{
+  display: none;
+  position: absolute;
+  right: 0;
+  top:45px;
+  z-index: 2;
+  &--show{
+    display: block;
   }
 }

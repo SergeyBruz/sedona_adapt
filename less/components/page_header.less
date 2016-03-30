@@ -31,9 +31,9 @@
     &--active:active a{
       color: @brown_light;
     }
-  }
-  &__logo{
-    position: relative;
+    &--mobile_menu_open, &--mobile_menu_close{
+      display:none;
+    }
   }
   .logo_container{
       position: absolute;
@@ -72,6 +72,12 @@
       background-color: @blue_mobil;
       border-top: 1px solid #9ac2db;
       border-bottom: 1px solid #678fa8;
+      &--mobile_menu{
+        display: none;
+      }
+      &--mobile_menu_show{
+        display: block;
+      }
       &--active a{
         color:white;
       }
@@ -80,6 +86,20 @@
       }
       &--foto{
         order: 3;
+      }
+      &--mobile_menu_open, &--mobile_menu_close{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 21px;
+        width: 23px;
+        height: 23px;
+      }
+      &--mobile_menu_open{
+        fill:@blue;
+      }
+      &--mobile_menu_close{
+        fill:white;
       }
       &--logo{
         flex-grow: 0;
@@ -93,6 +113,7 @@
           top:0;
           left:50%;
           margin-left: -21%;
+
         }
       }
       &--map{

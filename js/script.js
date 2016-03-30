@@ -56,36 +56,77 @@
 }( window, document ) );
 
 
-/*Форма поиска*/
 ;( function( window, document )
 {
   var link = document.querySelector(".btn--title");
-  var popup = document.querySelector(".main_footer__search_form");
-  var close = 0
+  var search_form = document.querySelector(".main_footer__search_form");
+  var i = 0;
+  var j=0;
+  var mobile_menu_open = document.querySelector(".item--mobile_menu_open");
+  var mobile_menu_close = document.querySelector(".item--mobile_menu_close");
+  //форма поиска
   link.addEventListener("click", function(event) {
-    if (close==0){
+    if (i==0){
       event.preventDefault();
-      popup.classList.add("main_footer__search_form--show");
-      close=1;
+      search_form.classList.add("main_footer__search_form--show");
+      i=1;
     }
-    else{
-      close=0;
+    else if (i==1){
+      i=0;
       event.preventDefault();
-      popup.classList.remove("main_footer__search_form--show");
+      search_form.classList.remove("main_footer__search_form--show");
     }
 });
+  //календарь
+  var calendar = document.querySelector(".datepicker");
+  var datepicker_open = document.querySelector(".calendar_icon");
+  datepicker_open.addEventListener("click", function(event) {
+    $(function(){
+      $.datepicker.setDefaults(
+            $.extend($.datepicker.regional["ru"])
+      );
+      $("#datepicker").datepicker({
+        minDate: "+1",
+        altField:"#date_in",
+        altFormat:"dd.mm.yy",
+        onSelect: function(datepicker, j){
+
+          j=1;
+          return j;
+        }
+      });
+    });
+
+    if (j==0){
+      event.preventDefault();
+      calendar.classList.add("datepicker--show");
+      j=1;
+    }
+    else if(j==1){
+      j=0;
+      event.preventDefault();
+      calendar.classList.remove("datepicker--show");
+    }
+});
+  //мобильное меню
+  mobile_menu_open.addEventListener("click", function(event) {
+    event.preventDefault();
+    var mobile_menu = document.querySelectorAll(".item--mobile_menu");
+    for (var i = 0; i < mobile_menu.length; i++) {
+      mobile_menu[i].classList.add("item--mobile_menu_show");
+    }
+});
+  mobile_menu_close.addEventListener("click", function(event) {
+    event.preventDefault();
+    var mobile_menu = document.querySelectorAll(".item--mobile_menu");
+    for (var i = 0; i < mobile_menu.length; i++) {
+      mobile_menu[i].classList.remove("item--mobile_menu_show");
+    }
+  });
 }( window, document ) );
 
   //форма поиска элементы
     $(document).ready(function() {
-      //календарь
-      /*$.datepicker.setDefaults({changeYear: true}, $.extend($.datepicker.regional["ru"]));
-        $("#datepicker_open").click(function(){
-          $("#date_in").datepicker(
-            "dialog",
-            { showButtonPanel: true }
-          );
-        });*/
 
       //взрослые
         $('.min').click(function () {

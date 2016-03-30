@@ -6,9 +6,12 @@
   <title>Седона</title>
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="js/datepicker/jquery-ui-1.9.2.custom.css">
   <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <script src="/js/jquery-1.12.2.min.js"></script>
-  <script type="text/javascript" src="js/datepicker.js"></script>
+  <script type="text/javascript" src="js/datepicker/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="js/datepicker/i18n/jquery-ui-i18n.min.js"></script>
+
 </head>
 <body>
   <body>
@@ -16,15 +19,26 @@
       <header class="page_header">
         <nav class="page_header__nav_menu">
           <ul class= "nav_menu">
-            <li class="item item--info item--active"> <a href="#">Информация</a> </li>
-            <li class="item item--foto"> <a href="#">Фото и Видео</a> </li>
+            <li class="item item--info item--mobile_menu item--active"> <a href="#">Информация</a> </li>
+            <li class="item item--foto item--mobile_menu"> <a href="#">Фото и Видео</a> </li>
             <li class="item item--logo">
+              <svg class="item--mobile_menu_open" width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-menu"></use></svg>
               <div class="logo_container">
-                <a class="logo_container--img" href="index.html"><img src="img/logo-sedona@1x.png" width="67" height="55" alt="Главная"></a>
+
+                <a class="logo_container--img" href="index.html">
+                  <picture>
+                    <source srcset="img/logo-sedona@2x.png 2x,
+                                    img/logo-sedona@2x.png 3x">
+                    <img src="img/logo-sedona@1x.png" width="67" height="55" alt="Главная">
+                  </picture>
+                </a>
               </div>
             </li>
-            <li class="item item--map"> <a href="#">Карта штата</a> </li>
-            <li class="item item--hotels"> <a href="hotels.html">Гостиницы</a> </li>
+            <li class="item item--map item--mobile_menu">
+              <svg class="item--mobile_menu_close" width="23" height="23"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cross"></use></svg>
+              <a href="#">Карта штата</a>
+            </li>
+            <li class="item item--hotels item--mobile_menu"> <a href="hotels.html">Гостиницы</a> </li>
           </ul>
         </nav>
       </header>
@@ -87,7 +101,7 @@
                 Если конечно вы осмелитесь</p>
           </div>
         </div>
-        <div class="page_content">
+        <div class="page_content page_content__mobile">
           <div class="page_content__columns_bottom page_content__columns_bottom--grey_bg">
             <h2>НЕБОЛЬШАЯ
               ПЛОЩАДЬ</h2>
@@ -122,9 +136,10 @@
         <div class="main_footer__search_form">
           <form class="search_form" action="#" method="post">
             <div class="search_form__date">
+              <div class="datepicker" id="datepicker"></div>
               <label for="date_in">Дата заезда:</label>
               <input type="text" name="date_in" id="date_in" value="24 Апреля 2016">
-              <svg class="calendar_icon" id="datepicker_open" width="20" height="25"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-calendar"></use></svg>
+              <svg class="calendar_icon" width="20" height="25"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-calendar"></use></svg>
             </div>
             <div class="search_form__date">
               <label for="date_out">Дата выезда:</label>
