@@ -262,8 +262,9 @@ iframe {
   display: none;
   position: absolute;
   right: 0;
-  top: 45px;
+  top: 0;
   z-index: 2;
+  box-shadow: 0 0 15px -4px #34495e;
 }
 .datepicker--show {
   display: block;

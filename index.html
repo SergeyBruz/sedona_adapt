@@ -136,15 +136,16 @@
         <div class="main_footer__search_form">
           <form class="search_form" action="#" method="post">
             <div class="search_form__date">
-              <div class="datepicker" id="datepicker"></div>
+              <div class="datepicker datepicker_in" id="datepicker_in"></div>
               <label for="date_in">Дата заезда:</label>
               <input type="text" name="date_in" id="date_in" value="24 Апреля 2016">
-              <svg class="calendar_icon" width="20" height="25"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-calendar"></use></svg>
+              <svg class="calendar_icon calendar_icon--in" width="20" height="25"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-calendar"></use></svg>
             </div>
             <div class="search_form__date">
+              <div class="datepicker datepicker_out" id="datepicker_out"></div>
               <label for="date_out">Дата выезда:</label>
               <input type="text" name="date_out" id="date_out" value="4 июля 2016"> <div class="date_icon"></div>
-              <svg class="calendar_icon" id="datepicker_open" width="20" height="25"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-calendar"></use></svg>
+              <svg class="calendar_icon calendar_icon--out" id="datepicker_open" width="20" height="25"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-calendar"></use></svg>
             </div>
             <div class="search_form__age">
               <div class="search_form__age_item">
@@ -198,6 +199,7 @@
       </footer>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/svg_script.js"></script>
   </body>
 </body>
 </html>
