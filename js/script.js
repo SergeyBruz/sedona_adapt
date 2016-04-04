@@ -1,12 +1,8 @@
-;( function( window, document )
-{
+(function() {
+  //форма поиска
   var link = document.querySelector(".btn--title");
   var search_form = document.querySelector(".main_footer__search_form");
   var i = 0;
-  var j=0;
-  var mobile_menu_open = document.querySelector(".item--mobile_menu_open");
-  var mobile_menu_close = document.querySelector(".item--mobile_menu_close");
-  //форма поиска
   link.addEventListener("click", function(event) {
     if (i==0){
       event.preventDefault();
@@ -19,22 +15,42 @@
       search_form.classList.remove("main_footer__search_form--show");
     }
 });
-//мобильное меню
-mobile_menu_open.addEventListener("click", function(event) {
-  event.preventDefault();
-  var mobile_menu = document.querySelectorAll(".item--mobile_menu");
-  for (var i = 0; i < mobile_menu.length; i++) {
-    mobile_menu[i].classList.add("item--mobile_menu_show");
+  //мобильное меню
+  var mobile_menu_open = document.querySelector(".item--mobile_menu_open");
+  var mobile_menu_close = document.querySelector(".item--mobile_menu_close");
+  mobile_menu_open.addEventListener("click", function(event) {
+    event.preventDefault();
+    var mobile_menu = document.querySelectorAll(".item--mobile_menu");
+    for (var i = 0; i < mobile_menu.length; i++) {
+      mobile_menu[i].classList.add("item--mobile_menu_show");
+    }
+  });
+  mobile_menu_close.addEventListener("click", function(event) {
+    event.preventDefault();
+    var mobile_menu = document.querySelectorAll(".item--mobile_menu");
+    for (var i = 0; i < mobile_menu.length; i++) {
+      mobile_menu[i].classList.remove("item--mobile_menu_show");
+    }
+  });
+})();
+
+//отправка формы
+/*(function() {
+  if (!("FormData" in window)) {
+    return;
   }
+  var form = document.querySelector(".search_form");
+  var data = new FormData(form);
+var xhr = new XMLHttpRequest();
+xhr.open("post", "/send");
+xhr.addEventListener("readystatechange", function() {
+if (xhr.readyState == 4) {
+console.log(xhr.responseText);
+}
 });
-mobile_menu_close.addEventListener("click", function(event) {
-  event.preventDefault();
-  var mobile_menu = document.querySelectorAll(".item--mobile_menu");
-  for (var i = 0; i < mobile_menu.length; i++) {
-    mobile_menu[i].classList.remove("item--mobile_menu_show");
-  }
-});
-}( window, document ) );
+xhr.send(data);
+  console.log(data);
+})();*/
 
 
 //JQuery
