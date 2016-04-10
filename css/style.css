@@ -39,6 +39,7 @@ input::-webkit-outer-spin-button {
   margin: 0px;
   display: none;
 }
+textarea,
 input {
   box-sizing: border-box;
   padding-top: 12px;
@@ -100,6 +101,7 @@ iframe {
   color: white;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 .btn--title {
   width: 47.4%;
@@ -722,6 +724,100 @@ iframe {
   .main_footer__footer_bottom .footer_item:last-child {
     margin-bottom: 0;
   }
+}
+input[type=file] {
+  display: none;
+}
+.comments {
+  text-align: center;
+}
+.comments__container {
+  box-shadow: 0 0 15px -4px #34495e;
+  max-width: 30%;
+  min-width: 400px;
+  background-color: white;
+  padding: 30px;
+}
+.writing_comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.writing_comment__col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.writing_comment__col label {
+  flex-basis: 40%;
+  text-align: left;
+}
+.writing_comment__col input {
+  flex-grow: 2;
+}
+.writing_comment__col textarea {
+  flex-grow: 2;
+}
+.writing_comment:nth-child(2) {
+  margin-bottom: 0;
+}
+.upload_images__list {
+  margin-bottom: 30px;
+}
+.upload_images__item {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+.upload_images__item:hover {
+  box-shadow: 0 0 15px -4px #34495e;
+}
+.upload_images__item img {
+  width: 150px;
+  height: 150px;
+}
+.upload_images__del_link {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -13px;
+  right: -13px;
+  border-radius: 50%;
+  border: 2px solid #c2c2c2;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.upload_images__del_link::before,
+.upload_images__del_link::after {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 3px;
+  top: 10px;
+  right: 3px;
+  background-color: #c2c2c2;
+}
+.upload_images__del_link::before {
+  transform: rotate(45deg);
+}
+.upload_images__del_link::after {
+  transform: rotate(-45deg);
+}
+.btn--photo {
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #81b3d2;
+}
+.btn--photo:hover {
+  background-color: #669ec0;
+}
+.btn--photo:active {
+  background-color: #5496bd;
 }
 @keyframes flipInX {
   from {

@@ -1,0 +1,97 @@
+input[type=file]{
+display: none;
+}
+.comments{
+  text-align: center;
+  &__container{
+    box-shadow: @shadow;
+    max-width:30%;
+    min-width: 400px;
+    background-color: white;
+    padding: 30px;
+  }
+}
+.writing_comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    label{
+      flex-basis: 40%;
+      text-align: left;
+    }
+    input{
+      flex-grow: 2;
+    }
+    textarea{
+      flex-grow: 2;
+    }
+  }
+  &:nth-child(2){
+    margin-bottom: 0;
+  }
+}
+.upload_images{
+  &__list{
+    margin-bottom: 30px;;
+  }
+  &__item{
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+    width:150px;
+    height: 150px;
+    cursor: pointer;
+      &:hover{
+        box-shadow: @shadow;
+    }
+    img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+  &__del_link{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -13px;
+    right: -13px;
+    border-radius: 50%;
+    border: 2px solid @grey_dark;
+    background-color: @white_transp;
+    &::before, &::after{
+      content: "";
+      position: absolute;
+      width: 19px;
+      height: 3px;
+      top: 10px;
+      right: 3px;
+      background-color: @grey_dark;
+    }
+    &::before{
+      transform: rotate(45deg);
+    }
+    &::after{
+      transform: rotate(-45deg);
+    }
+  }
+}
+.btn{
+  &--photo{
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: @blue_light;
+    &:hover{
+      background-color: @blue;
+    }
+    &:active{
+      background-color: @blue_dark;
+    }
+  }
+}

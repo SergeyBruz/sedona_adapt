@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Выбор фото</title>
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+</head>
+<body class=comments>
+  <div class="comments__container">
+    <form class="writing_comment" action="" method="post">
+      <div class="writing_comment__col">
+        <label for="name">Введите имя</label>
+        <input type="text" name="name">
+      </div>
+      <div class="writing_comment__col">
+        <label for="comment">Ваши впечатления</label>
+        <textarea name="comment" cols="0" rows="0"></textarea>
+      </div>
+      <div class="writing_comment__row upload_images">
+        <ul class="upload_images__list">
+        </ul>
+      </div>
+      <div class="writing_comment__row">
+        <label class="btn btn--photo"> Загрузить фото
+          <input type="file" name="images" id="upload_photo" multiple>
+        </label>
+      </div>
+      <input class="btn btn--search" type="submit" name="name" value="Оправить">
+    </form>
+
+  </div>
+  <!--шаблон-->
+  <script id="image_template" type="text/html">
+    <div class="upload_images__img-wrap">
+      <img src="{{image}}" alt="{{name}}" title="{{name}}">
+    </div>
+    <a href="#" class="upload_images__del_link" title="Удалить"></a>
+  </script>
+
+  <script src="js/vendors/tap.min.js"></script>
+  <script src="js/vendors/mustache.min.js"></script>
+  <script src="js/script_photo.js"></script>
+
+
+</body>
+</html>

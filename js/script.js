@@ -3,7 +3,7 @@
   var link = document.querySelector(".btn--title");
   var search_form = document.querySelector(".main_footer__search_form");
   var i = 0;
-  link.addEventListener("click", function(event) {
+  link.addEventListener("tap", function(event) {
     if (i==0){
       event.preventDefault();
       search_form.classList.add("main_footer__search_form--show");
@@ -15,17 +15,25 @@
       search_form.classList.remove("main_footer__search_form--show");
     }
 });
+  //взрослые
+  var min_a = document.querySelector(".min_a");
+  var max_a = document.querySelector(".max_a");
+  var input_a = document.querySelector("#adults");
+  min_a.addEventListener("tap", function (event){
+    event.preventDefault();
+    input_a.value= input_a.value + 1;
+  });
   //мобильное меню
   var mobile_menu_open = document.querySelector(".item--mobile_menu_open");
   var mobile_menu_close = document.querySelector(".item--mobile_menu_close");
-  mobile_menu_open.addEventListener("click", function(event) {
+  mobile_menu_open.addEventListener("tap", function(event) {
     event.preventDefault();
     var mobile_menu = document.querySelectorAll(".item--mobile_menu");
     for (var i = 0; i < mobile_menu.length; i++) {
       mobile_menu[i].classList.add("item--mobile_menu_show");
     }
   });
-  mobile_menu_close.addEventListener("click", function(event) {
+  mobile_menu_close.addEventListener("tap", function(event) {
     event.preventDefault();
     var mobile_menu = document.querySelectorAll(".item--mobile_menu");
     for (var i = 0; i < mobile_menu.length; i++) {
@@ -66,7 +74,7 @@ xhr.send(data);
     });
 
     //взрослые
-    $('.min').click(function () {
+    /*$('.min').click(function () {
       var $input = $(this).parent().find('#adults');
       var count = parseInt($input.val()) - 1;
       count = count < 1 ? 1 : count;
@@ -79,7 +87,7 @@ xhr.send(data);
       $input.val(parseInt($input.val()) + 1);
       $input.change();
       return false;
-    });
+    });*/
     //дети
     $('.min').click(function () {
       var $input = $(this).parent().find('#children');
